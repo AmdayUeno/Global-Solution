@@ -44,7 +44,7 @@ A identidade visual foi inspirada em centros de controle e sistemas de monitoram
 
 Objetivos de Desenvolvimento Sustentável (ODS)
 
-ODS 6 — Água Potável e Saneamento
+ODS 2 - Fome Zero & Agricultura Sustentável
 
 ---
 
