@@ -1,39 +1,133 @@
-🌕 Sailor-1 | Sistema de Gestão de Recursos
+🌕 Sailor-1 — Sistema de Gestão de Recursos
 
-Protótipo navegável de um sistema web para monitoramento e controle de recursos de uma colônia lunar fictícia — Base Selene, Setor 7.
+Protótipo de sistema web para monitoramento e controle de recursos de uma colônia lunar fictícia.
+
+Projeto acadêmico desenvolvido para a Global Solution FIAP — Indústria Espacial · 2026.
+
+Equipe
+
+Amanda Ayumi Guedes Ueno
+
+Conteúdo do Projeto
+Dashboard Operacional
+Gestão de Energia
+Gestão de Água
+Qualidade do Ar
+Controle de Alimentos
+Central de Alertas
+Monitoramento dos Módulos
+Responsividade
+Acessibilidade
+Design System
+Conexão com ODS
+Páginas
+Dashboard
+
+Tela principal com visão geral da Base.
+
+Funcionalidades:
+
+Indicadores críticos de operação
+Consumo de recursos nas últimas 24 horas
+Alertas ativos
+Visão consolidada da colônia
+Energia
+
+Monitoramento da infraestrutura energética da base.
+
+Funcionalidades:
+
+Geração solar
+Consumo energético
+Nível das baterias
+Autonomia estimada
+Água
+
+Controle e distribuição dos recursos hídricos.
+
+Funcionalidades:
+
+Reserva total disponível
+Taxa de reaproveitamento
+Consumo por módulo
+Indicadores de eficiência
+Qualidade do Ar
+
+Monitoramento das condições ambientais internas.
+
+Funcionalidades:
+
+Níveis de oxigênio (O₂)
+Níveis de dióxido de carbono (CO₂)
+Pressão atmosférica
+Umidade relativa
+Alimentos
+
+Gestão de estoque e produção agrícola.
+
+Funcionalidades:
+
+Estoque alimentar atual
+Produção agrícola interna
+Projeções para 30 dias
+Cenários de abastecimento
+Alertas
+
+Central de gerenciamento de ocorrências.
+
+Categorias:
+
+Crítico
+Atenção
+Informativo
+Resolvido
+Módulos
+
+Status individual dos módulos habitacionais.
+
+Informações exibidas:
+
+Recursos disponíveis
+Condições operacionais
+Ocupação
+Alertas locais
+Entregas Técnicas
+Interface Navegável
 
 
-📋 Sobre o Projeto
-O Sailor-1 é uma interface de gestão de recursos desenvolvida como resposta ao desafio da Global Solution FIAP — Indústria Espacial. O sistema simula um painel de controle operacional para uma colônia lunar com 47 habitantes distribuídos em 6 módulos, permitindo monitorar energia, água, oxigênio, estoque alimentar e emitir alertas críticos em tempo real.
-Embora o contexto seja espacial, a lógica do sistema reflete problemas reais da Terra: gestão hídrica em cidades, monitoramento ambiental, segurança alimentar e resposta a emergências.
+Monitoramento visual dos recursos utilizando semáforo operacional:
 
-🚀 Funcionalidades
-O protótipo conta com 7 telas navegáveis por meio de sidebar lateral:
-TelaDescriçãoDashboardVisão geral do sistema com 4 métricas críticas, gráfico de consumo 24h e alertas ativosEnergiaGeração solar vs. consumo, status da bateria e autonomia estimadaÁguaReserva hídrica, taxa de reaproveitamento e consumo por móduloQualidade do ArMonitoramento de O₂, CO₂, pressão atmosférica e umidadeAlimentosEstoque atual, produção agrícola e projeção para 30 dias com 2 cenáriosAlertasCentral de alertas com níveis de prioridade (crítico, atenção, info, resolvido)MódulosStatus detalhado individual dos 6 módulos habitacionais da colônia
+🟢 Normal
+🟠 Atenção
+🔴 Crítico
+Dashboard Analítico
 
-🎨 Decisões de Design e UX
+Implementação de gráficos, métricas e painéis de acompanhamento em tempo real.
+
+Acessibilidade
+
+Aplicação de boas práticas com foco em inclusão digital:
+
+Uso de atributos ARIA
+Contraste adequado
+Estrutura semântica
+Navegação intuitiva
 Identidade Visual
-O sistema adota uma estética de cockpit técnico espacial — escura, precisa e funcional — sem recorrer a clichês genéricos de ficção científica.
+Elemento	Valor
+Cor principal	#4DD9E8
+Fundo principal	#06090F
+Superfície	#0C1220
+Superfície secundária	#111827
+Tipografia principal	Space Grotesk
+Tipografia de dados	JetBrains Mono
+Conceito Visual
 
-Paleta: fundo profundo #06090F com superfícies #0C1220 e #111827. A cor de sistema é ciano #4DD9E8, que representa o estado operacional neutro. Um semáforo consistente — verde (normal), laranja (atenção), vermelho (crítico) — codifica o estado de cada recurso de forma imediata e intuitiva.
-Tipografia: Space Grotesk para display e navegação (personalidade técnica, mas humanizada) + JetBrains Mono para todos os valores numéricos e dados de telemetria (precisão e leitura rápida).
-Assinatura visual: animações pulse nos indicadores de estado crítico — um detalhe sutil que comunica urgência sem poluir a interface.
+A identidade visual foi inspirada em centros de controle e sistemas de monitoramento avançados, priorizando legibilidade, hierarquia da informação e tomada rápida de decisão.
 
-Hierarquia de Informação
-Cada tela segue a mesma estrutura descendente:
+Objetivos de Desenvolvimento Sustentável (ODS)
 
-Strip de status — métricas-chave em destaque numérico com barra de nível
-Gráficos e painéis — contexto histórico e distribuição por módulo
-Alertas e detalhes — informação acionável para tomada de decisão
+ODS 6 — Água Potável e Saneamento
 
-Essa estrutura permite que um operador identifique o estado crítico do sistema em menos de 3 segundos ao abrir qualquer tela.
-Acessibilidade e Responsividade
+Repositório
 
-Todos os elementos <canvas> possuem role="img" e aria-label descritivo para leitores de tela
-Interface responsiva: sidebar colapsa em telas menores que 900px; grids adaptam para coluna única
-Contraste de texto respeitado em todos os estados de cor
-Redução de movimento prevista na estrutura (sem animações de layout que causem desorientação)
-
-
-🛰️ Conexão com ODS
-ODSRelação com o projetoODS 2 — Fome ZeroMódulo de gestão alimentar com projeção de déficit e impacto da produção agrícola interna
+GitHub: https://github.com/AmdayUeno/Global-Solution
