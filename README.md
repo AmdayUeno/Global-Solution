@@ -31,16 +31,11 @@ Acessibilidade
 
 Aplicação de boas práticas com foco em inclusão digital:
 
-Contraste adequado
-Estrutura semântica
-Navegação intuitiva
-Identidade Visual
-Elemento	Valor
-Cor principal	#4DD9E8
-Fundo principal	#06090F
-Superfície	#0C1220
-Superfície secundária	#111827
-Tipografia principal	Space Grotesk
+-Contraste adequado
+-Estrutura semântica
+-Navegação intuitiva
+-Cor principal	#4DD9E8
+-Tipografia principal	Space Grotesk
 
 ---
 
