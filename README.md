@@ -10,20 +10,19 @@ Equipe
 Amanda Ayumi Guedes Ueno
 
 ---
-Conteúdo do Projeto
-Dashboard Operacional
-Gestão de Energia
-Gestão de Água
-Qualidade do Ar
-Controle de Alimentos
-Central de Alertas
-Monitoramento dos Módulos
-Responsividade
-Acessibilidade
-Design System
-Conexão com ODS
-Páginas
-Dashboard
+- Conteúdo do Projeto
+- Dashboard Operacional
+- Gestão de Energia
+- Gestão de Água
+- Qualidade do Ar
+- Controle de Alimentos
+- Central de Alertas
+- Monitoramento dos Módulos
+- Responsividade
+- Acessibilidade
+- Design System
+- Conexão com ODS
+- Dashboard
 
 ---
 
@@ -31,11 +30,11 @@ Acessibilidade
 
 Aplicação de boas práticas com foco em inclusão digital:
 
--Contraste adequado
--Estrutura semântica
--Navegação intuitiva
--Cor principal	#4DD9E8
--Tipografia principal	Space Grotesk
+- Contraste adequado
+- Estrutura semântica
+- Navegação intuitiva
+- Cor principal	#4DD9E8
+- Tipografia principal	Space Grotesk
 
 ---
 
