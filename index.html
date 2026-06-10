@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sailor-1 — Gestão de Recursos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="topbar-l">
+      <div class="logo">
+        <div class="logo-mark">S1</div>
+        <span class="logo-name"> Sailor-1</span>
+      </div>
+      <div class="divider-v"></div>
+      <div class="page-info">
+        <h1>Sistema de Gestão de Recursos</h1>
+        <p>Colônia Lunar · Módulos Ativos: 8/8 · Dia 142 de Missão</p>
+      </div>
+      <div class="badge-op"><span class="pulse"></span>Operacional</div>
+    </div>
+    <div class="topbar-r">
+      <div class="met" id="met">MET: 142D 06:31:08</div>
+      <div class="icon-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+          <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+        </svg>
+        <div class="notif-dot">3</div>
+      </div>
+      <div class="avatar">CW</div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- RECURSOS -->
+    <section>
+      <div class="sec-label">Status dos Recursos</div>
+      <div class="res-row">
+        <div class="res-card en">
+          <div class="rc-head">
+            <div class="rc-icon en">⚡</div>
+            <div class="rc-trend dn">↓ 4.2%</div>
+          </div>
+          <div class="rc-val" style="color:var(--amber)">74<span style="font-size:17px;font-weight:400">%</span></div>
+          <div class="rc-sub">Energia · 148 kWh disponíveis</div>
+          <div class="bar-t">
+            <div class="bar-f en" style="width:74%"></div>
+          </div>
+        </div>
+        <div class="res-card wa">
+          <div class="rc-head">
+            <div class="rc-icon wa">💧</div>
+            <div class="rc-trend st">→ 0.1%</div>
+          </div>
+          <div class="rc-val" style="color:var(--cyan)">62<span style="font-size:17px;font-weight:400">%</span></div>
+          <div class="rc-sub">Água · 3.720 L reserva · 42 dias</div>
+          <div class="bar-t">
+            <div class="bar-f wa" style="width:62%"></div>
+          </div>
+        </div>
+        <div class="res-card ox">
+          <div class="rc-head">
+            <div class="rc-icon ox">🫁</div>
+            <div class="rc-trend up">↑ 1.8%</div>
+          </div>
+          <div class="rc-val" style="color:var(--green)">88<span style="font-size:17px;font-weight:400">%</span></div>
+          <div class="rc-sub">O₂ · 21.2% cabine · 1013 hPa</div>
+          <div class="bar-t">
+            <div class="bar-f ox" style="width:88%"></div>
+          </div>
+        </div>
+        <div class="res-card fo">
+          <div class="rc-head">
+            <div class="rc-icon fo">🌱</div>
+            <div class="rc-trend dn">↓ 1.1%</div>
+          </div>
+          <div class="rc-val" style="color:var(--purple)">51<span style="font-size:17px;font-weight:400">%</span></div>
+          <div class="rc-sub">Alimentos · 38 dias · colheita em 12d</div>
+          <div class="bar-t">
+            <div class="bar-f fo" style="width:51%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ② MODULES + CHART / RINGS + ALERTS -->
+    <div class="grid-main">
+
+      <!-- LEFT: MÓDULOS -->
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div class="panel">
+          <div class="ph">
+            <div class="ph-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
+              </svg>
+              Distribuição por Módulo
+            </div>
+          </div>
+          <div style="padding:14px 18px 0">
+            <table class="mod-tbl">
+              <thead>
+                <tr>
+                  <th style="width:38%">Módulo</th>
+                  <th>Energia</th>
+                  <th>Água</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="mod-name">
+                      <div class="mdot" style="background:var(--cyan)"></div>Hab-A · Residencial
+                    </div>
+                  </td>
+                  <td style="color:var(--t2)"><span style="color:var(--amber);font-weight:600">42</span> kWh<div
+                      class="mini-bar-t">
+                      <div class="mini-bar-f" style="width:70%;background:var(--amber)"></div>
+                    </div>
+                  </td>
+                  <td style="color:var(--t2)"><span style="font-weight:600;color:var(--t1)">820</span> L<div
+                      class="mini-bar-t">
+                      <div class="mini-bar-f" style="width:65%"></div>
+                    </div>
+                  </td>
+                  <td><span class="pill ok">● Normal</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mod-name">
+                      <div class="mdot" style="background:var(--amber)"></div>Lab-B · Pesquisa
+                    </div>
+                  </td>
+                  <td style="color:var(--t2)"><span style="color:var(--amber);font-weight:600">38</span> kWh<div
+                      class="mini-bar-t">
+                      <div class="mini-bar-f" style="width:82%;background:var(--amber)"></div>
+                    </div>
+                  </td>
+                  <td style="color:var(--t2)"><span style="font-weight:600;color:var(--t1)">340</span> L<div
+                      class="mini-bar-t">
+                      <div class="mini-bar-f" style="width:28%;background:var(--amber)"></div>
+                    </div>
+                  </td>
+                  <td><span class="pill warn">● Atenção</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mod-name">
+                      <div class="mdot" style="background:var(--green)"></div>Agro-C · Cultivo
+                    </div>
+                  </td>
+                  <td style="color:var(--t2)"><span style="color:var(--amber);font-weight:600">28</span> kWh<div
+                      class="mini-bar-t">
+                      <div class="mini-bar-f" style="width:52%;background:var(--amber)"></div>
+                    </div>
+                  </td>
+                  <td style="color:var(--t2)"><span style="font-weight:600;color:var(--t1)">1.240</span> L<div
+                      class="mini-bar-t">
+                      <div class="mini-bar-f" style="width:92%"></div>
+                    </div>
+                  </td>
+                  <td><span class="pill ok">● Normal</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mod-name">
+                      <div class="mdot" style="background:var(--red)"></div>Eng-D · Manutenção
+                    </div>
+                  </td>
+                  <td style="color:var(--t2)"><span style="color:var(--red);font-weight:600">14</span> kWh<div
+                      class="mini-bar-t">
+                      <div class="mini-bar-f" style="width:22%;background:var(--red)"></div>
+                    </div>
+                  </td>
+                  <td style="color:var(--t2)"><span style="font-weight:600;color:var(--t1)">210</span> L<div
+                      class="mini-bar-t">
+                      <div class="mini-bar-f" style="width:18%;background:var(--red)"></div>
+                    </div>
+                  </td>
+                  <td><span class="pill crit">● Crítico</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mod-name">
+                      <div class="mdot" style="background:var(--purple)"></div>Med-E · Enfermaria
+                    </div>
+                  </td>
+                  <td style="color:var(--t2)"><span style="color:var(--amber);font-weight:600">26</span> kWh<div
+                      class="mini-bar-t">
+                      <div class="mini-bar-f" style="width:49%;background:var(--amber)"></div>
+                    </div>
+                  </td>
+                  <td style="color:var(--t2)"><span style="font-weight:600;color:var(--t1)">1.110</span> L<div
+                      class="mini-bar-t">
+                      <div class="mini-bar-f" style="width:81%"></div>
+                    </div>
+                  </td>
+                  <td><span class="pill ok">● Normal</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- CHART -->
+          <div class="chart-wrap" id="chart"></div>
+          <div class="legend">
+            <div class="leg-item">
+              <div class="leg-dot" style="background:var(--amber)"></div>Energia (kWh)
+            </div>
+            <div class="leg-item">
+              <div class="leg-dot" style="background:var(--cyan)"></div>Água (×10 L)
+            </div>
+            <div class="leg-item">
+              <div class="leg-dot" style="background:var(--green)"></div>O₂ (%)
+            </div>
+          </div>
+        </div>
+
+        <!-- MAP -->
+        <div class="panel">
+          <div class="ph">
+            <div class="ph-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
+                <line x1="12" y1="22" x2="12" y2="15.5" />
+                <polyline points="22 8.5 12 15.5 2 8.5" />
+              </svg>
+              Mapa da Colônia
+            </div>
+            <div style="display:flex;gap:12px;font-size:10px;color:var(--t2)">
+              <span style="display:flex;align-items:center;gap:4px"><span
+                  style="width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block"></span>Normal</span>
+              <span style="display:flex;align-items:center;gap:4px"><span
+                  style="width:8px;height:8px;border-radius:50%;background:var(--amber);display:inline-block"></span>Atenção</span>
+              <span style="display:flex;align-items:center;gap:4px"><span
+                  style="width:8px;height:8px;border-radius:50%;background:var(--red);display:inline-block"></span>Crítico</span>
+            </div>
+          </div>
+          <div class="pb">
+            <div class="map-area">
+              <svg style="position:relative;z-index:1" width="100%" viewBox="0 0 620 320"
+                preserveAspectRatio="xMidYMid meet">
+                <!-- CONNECTIONS -->
+                <line x1="180" y1="160" x2="310" y2="160" stroke="#1C2B42" stroke-width="3" stroke-dasharray="6,4" />
+                <line x1="310" y1="160" x2="440" y2="160" stroke="#1C2B42" stroke-width="3" stroke-dasharray="6,4" />
+                <line x1="310" y1="160" x2="310" y2="250" stroke="#1C2B42" stroke-width="3" stroke-dasharray="6,4" />
+                <line x1="180" y1="160" x2="100" y2="250" stroke="#1C2B42" stroke-width="2" stroke-dasharray="4,4" />
+                <line x1="440" y1="160" x2="520" y2="250" stroke="#1C2B42" stroke-width="2" stroke-dasharray="4,4" />
+                <!-- CENTER HUB -->
+                <polygon points="310,122 346,143 346,185 310,206 274,185 274,143" fill="#0A1628" stroke="#00D4FF"
+                  stroke-width="1.5" />
+                <text x="310" y="156" text-anchor="middle" fill="#00D4FF" font-family="Space Grotesk" font-size="10"
+                  font-weight="600">NÚCLEO</text>
+                <text x="310" y="170" text-anchor="middle" fill="#7A8CAB" font-family="Inter"
+                  font-size="9">Central</text>
+                <text x="310" y="183" text-anchor="middle" fill="#10B981" font-family="Space Grotesk" font-size="8">●
+                  Online</text>
+                <!-- HAB-A -->
+                <rect x="102" y="128" width="110" height="64" rx="6" fill="#0A1628" stroke="#00D4FF"
+                  stroke-width="1.5" />
+                <text x="157" y="154" text-anchor="middle" fill="#E8EDF7" font-family="Space Grotesk" font-size="11"
+                  font-weight="600">Hab-A</text>
+                <text x="157" y="168" text-anchor="middle" fill="#7A8CAB" font-family="Inter"
+                  font-size="9">Residencial</text>
+                <text x="157" y="182" text-anchor="middle" fill="#10B981" font-family="Space Grotesk" font-size="8">●
+                  Normal</text>
+                <!-- LAB-B -->
+                <rect x="408" y="128" width="110" height="64" rx="6" fill="#0A1628" stroke="#F59E0B"
+                  stroke-width="1.5" />
+                <text x="463" y="154" text-anchor="middle" fill="#E8EDF7" font-family="Space Grotesk" font-size="11"
+                  font-weight="600">Lab-B</text>
+                <text x="463" y="168" text-anchor="middle" fill="#7A8CAB" font-family="Inter"
+                  font-size="9">Pesquisa</text>
+                <text x="463" y="182" text-anchor="middle" fill="#F59E0B" font-family="Space Grotesk" font-size="8">⚠
+                  Atenção</text>
+                <!-- AGRO-C -->
+                <rect x="250" y="230" width="120" height="64" rx="6" fill="#0A1628" stroke="#10B981"
+                  stroke-width="1.5" />
+                <text x="310" y="258" text-anchor="middle" fill="#E8EDF7" font-family="Space Grotesk" font-size="11"
+                  font-weight="600">Agro-C</text>
+                <text x="310" y="272" text-anchor="middle" fill="#7A8CAB" font-family="Inter"
+                  font-size="9">Cultivo</text>
+                <text x="310" y="284" text-anchor="middle" fill="#10B981" font-family="Space Grotesk" font-size="8">●
+                  Normal</text>
+                <!-- ENG-D -->
+                <rect x="44" y="230" width="110" height="64" rx="6" fill="#0A1628" stroke="#EF4444" stroke-width="2" />
+                <text x="99" y="258" text-anchor="middle" fill="#E8EDF7" font-family="Space Grotesk" font-size="11"
+                  font-weight="600">Eng-D</text>
+                <text x="99" y="272" text-anchor="middle" fill="#7A8CAB" font-family="Inter"
+                  font-size="9">Manutenção</text>
+                <text x="99" y="284" text-anchor="middle" fill="#EF4444" font-family="Space Grotesk" font-size="8">⚡
+                  Crítico</text>
+                <!-- MED-E -->
+                <rect x="466" y="230" width="110" height="64" rx="6" fill="#0A1628" stroke="#8B5CF6"
+                  stroke-width="1.5" />
+                <text x="521" y="258" text-anchor="middle" fill="#E8EDF7" font-family="Space Grotesk" font-size="11"
+                  font-weight="600">Med-E</text>
+                <text x="521" y="272" text-anchor="middle" fill="#7A8CAB" font-family="Inter"
+                  font-size="9">Enfermaria</text>
+                <text x="521" y="284" text-anchor="middle" fill="#10B981" font-family="Space Grotesk" font-size="8">●
+                  Normal</text>
+                <!-- SOLAR LABEL -->
+                <text x="310" y="48" text-anchor="middle" fill="#3D5070" font-family="Inter" font-size="10">▲ Painéis
+                  Solares · 12 ativos · 91% eficiência</text>
+                <line x1="180" y1="55" x2="440" y2="55" stroke="#1C2B42" stroke-width="1" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div style="display:flex;flex-direction:column;gap:18px">
+
+        <!-- RINGS -->
+        <div class="panel">
+          <div class="ph">
+            <div class="ph-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              Reservas Críticas
+            </div>
+          </div>
+          <div class="pb">
+            <div class="rings-wrap">
+              <div class="ring-row">
+                <svg width="60" height="60" viewBox="0 0 60 60" style="flex-shrink:0">
+                  <circle cx="30" cy="30" r="24" fill="none" stroke="var(--b)" stroke-width="7" />
+                  <circle cx="30" cy="30" r="24" fill="none" stroke="var(--cyan)" stroke-width="7"
+                    stroke-dasharray="150.8" stroke-dashoffset="57" stroke-linecap="round"
+                    transform="rotate(-90 30 30)" />
+                  <text x="30" y="35" text-anchor="middle" fill="var(--cyan)" font-family="Space Grotesk" font-size="12"
+                    font-weight="700">62%</text>
+                </svg>
+                <div class="ring-info">
+                  <div class="ring-title">Água Potável</div>
+                  <div class="ring-sub">Reciclagem ativa · 94% eficiência</div>
+                  <div class="ring-meta">
+                    <div class="rmi"><strong>3.720L</strong>reserva</div>
+                    <div class="rmi"><strong>42d</strong>estimado</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ring-row">
+                <svg width="60" height="60" viewBox="0 0 60 60" style="flex-shrink:0">
+                  <circle cx="30" cy="30" r="24" fill="none" stroke="var(--b)" stroke-width="7" />
+                  <circle cx="30" cy="30" r="24" fill="none" stroke="var(--amber)" stroke-width="7"
+                    stroke-dasharray="150.8" stroke-dashoffset="39" stroke-linecap="round"
+                    transform="rotate(-90 30 30)" />
+                  <text x="30" y="35" text-anchor="middle" fill="var(--amber)" font-family="Space Grotesk"
+                    font-size="12" font-weight="700">74%</text>
+                </svg>
+                <div class="ring-info">
+                  <div class="ring-title">Energia Solar</div>
+                  <div class="ring-sub">Painéis a 91% · noite em 6h</div>
+                  <div class="ring-meta">
+                    <div class="rmi"><strong>148kWh</strong>dispon.</div>
+                    <div class="rmi"><strong>52kWh/h</strong>consumo</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ring-row">
+                <svg width="60" height="60" viewBox="0 0 60 60" style="flex-shrink:0">
+                  <circle cx="30" cy="30" r="24" fill="none" stroke="var(--b)" stroke-width="7" />
+                  <circle cx="30" cy="30" r="24" fill="none" stroke="var(--purple)" stroke-width="7"
+                    stroke-dasharray="150.8" stroke-dashoffset="74" stroke-linecap="round"
+                    transform="rotate(-90 30 30)" />
+                  <text x="30" y="35" text-anchor="middle" fill="var(--purple)" font-family="Space Grotesk"
+                    font-size="12" font-weight="700">51%</text>
+                </svg>
+                <div class="ring-info">
+                  <div class="ring-title">Estoque Alimentar</div>
+                  <div class="ring-sub">Colheita Agro-C em 12 dias</div>
+                  <div class="ring-meta">
+                    <div class="rmi"><strong>38d</strong>restantes</div>
+                    <div class="rmi"><strong>6</strong>tripulantes</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ALERTAS -->
+        <div class="panel">
+          <div class="ph">
+            <div class="ph-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+              Alertas Ativos
+            </div>
+          </div>
+          <div class="alert-list">
+            <div class="al-item">
+              <div class="al-dot crit"></div>
+              <div class="al-text">
+                <div class="al-title">Energia crítica em Eng-D — 14 kWh</div>
+                <div class="al-time">há 14 min · Prioridade Alta</div>
+              </div>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--t3)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </div>
+            <div class="al-item">
+              <div class="al-dot warn"></div>
+              <div class="al-text">
+                <div class="al-title">Água abaixo de 30% em Lab-B</div>
+                <div class="al-time">há 2h · Prioridade Média</div>
+              </div>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--t3)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </div>
+            <div class="al-item">
+              <div class="al-dot info"></div>
+              <div class="al-text">
+                <div class="al-title">Painel P-07 com leitura 18% baixa</div>
+                <div class="al-time">há 5h · Prioridade Baixa</div>
+              </div>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--t3)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRIPULAÇÃO -->
+        <div class="panel">
+          <div class="ph">
+            <div class="ph-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="17" cy="7" r="4" />
+                <path d="M10.5 7A6.5 6.5 0 0 1 4 13.5V22h13v-3" />
+              </svg>
+              Tripulação
+            </div>
+            <span style="font-size:11px;color:var(--t3)">6 membros</span>
+          </div>
+          <div class="crew-list">
+            <div class="crew-item">
+              <div class="c-av" style="background:linear-gradient(135deg,#00D4FF,#004D5E)">CW</div>
+              <div class="c-info">
+                <div class="c-name">Dr. Chen Wei</div>
+                <div class="c-role">Comandante · Médica</div>
+              </div>
+              <div class="c-vitals">
+                <div class="c-status ok">● Estável</div>
+                <div class="c-status" style="color:var(--t3);font-size:9px">72 bpm</div>
+              </div>
+            </div>
+            <div class="crew-item">
+              <div class="c-av" style="background:linear-gradient(135deg,#F59E0B,#6B4500)">JR</div>
+              <div class="c-info">
+                <div class="c-name">João Ribeiro</div>
+                <div class="c-role">Engenheiro Chefe</div>
+              </div>
+              <div class="c-vitals">
+                <div class="c-status ok">● Estável</div>
+                <div class="c-status" style="color:var(--t3);font-size:9px">68 bpm</div>
+              </div>
+            </div>
+            <div class="crew-item">
+              <div class="c-av" style="background:linear-gradient(135deg,#8B5CF6,#3b0764)">AN</div>
+              <div class="c-info">
+                <div class="c-name">Amara Nkosi</div>
+                <div class="c-role">Geóloga · Bióloga</div>
+              </div>
+              <div class="c-vitals">
+                <div class="c-status warn">● Fadiga</div>
+                <div class="c-status" style="color:var(--t3);font-size:9px">88 bpm</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- RADAR AMBIENTAL LUNAR -->
+<div class="panel">
+    <div class="ph">
+        <div class="ph-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="var(--cyan)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="4"></circle>
+                <line x1="12" y1="2" x2="12" y2="6"></line>
+                <line x1="22" y1="12" x2="18" y2="12"></line>
+                <line x1="12" y1="22" x2="12" y2="18"></line>
+                <line x1="2" y1="12" x2="6" y2="12"></line>
+            </svg>
+            Radar Ambiental Lunar
+        </div>
+    </div>
+
+    <div class="pb">
+        <div class="radar-grid">
+
+            <div class="radar-card">
+                <span class="radar-icon">🌡</span>
+                <div>
+                    <div class="radar-value">-112°C</div>
+                    <div class="radar-label">Temperatura Externa</div>
+                </div>
+            </div>
+
+            <div class="radar-card">
+                <span class="radar-icon">☢</span>
+                <div>
+                    <div class="radar-value warning">Média</div>
+                    <div class="radar-label">Radiação Solar</div>
+                </div>
+            </div>
+
+            <div class="radar-card">
+                <span class="radar-icon">🛰</span>
+                <div>
+                    <div class="radar-value success">98%</div>
+                    <div class="radar-label">Sinal Satelital</div>
+                </div>
+            </div>
+
+            <div class="radar-card">
+                <span class="radar-icon">🌍</span>
+                <div>
+                    <div class="radar-value">Visível</div>
+                    <div class="radar-label">Posição da Terra</div>
+                </div>
+            </div>
+
+            <div class="radar-card">
+                <span class="radar-icon">☀</span>
+                <div>
+                    <div class="radar-value warning">Alta</div>
+                    <div class="radar-label">Atividade Solar</div>
+                </div>
+            </div>
+
+            <div class="radar-card">
+                <span class="radar-icon">📡</span>
+                <div>
+                    <div class="radar-value">1.3s</div>
+                    <div class="radar-label">Latência Terra-Lua</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+      </div>
+    </div>
+
+    
+
+    <!-- ③ CONTROLES + AGRO + LOG -->
+    <section>
+      <div class="sec-label">Controles do Sistema</div>
+      <div class="ctrl-grid">
+        <div class="ctrl-card">
+          <div class="ctrl-label">Distribuição de Energia</div>
+          <div class="ctrl-val" style="color:var(--amber)">52 <span class="ctrl-unit">kWh/h</span></div>
+          <div class="ctrl-desc">Consumo total atual. Ajuste a prioridade entre os módulos.</div>
+          <div class="slider-row"><span>Economia</span><span>Máximo</span></div>
+          <input type="range" class="slider" min="0" max="100" value="74">
+          <div class="toggle-row"><span class="tgl-label">Modo emergência</span>
+            <div class="tgl" onclick="this.classList.toggle('on')"></div>
+          </div>
+        </div>
+        <div class="ctrl-card">
+          <div class="ctrl-label">Filtração de Água</div>
+          <div class="ctrl-val" style="color:var(--cyan)">94 <span class="ctrl-unit">%</span></div>
+          <div class="ctrl-desc">Eficiência do sistema de reciclagem e reaproveitamento.</div>
+          <div class="slider-row"><span>Mínimo</span><span>Total</span></div>
+          <input type="range" class="slider" min="0" max="100" value="94">
+          <div class="toggle-row"><span class="tgl-label">Ciclo automático</span>
+            <div class="tgl on" onclick="this.classList.toggle('on')"></div>
+          </div>
+        </div>
+        <div class="ctrl-card">
+          <div class="ctrl-label">Pressurização O₂</div>
+          <div class="ctrl-val" style="color:var(--green)">21.2 <span class="ctrl-unit">%</span></div>
+          <div class="ctrl-desc">Concentração O₂ na cabine. Faixa segura: 20.9% – 23.5%.</div>
+          <div class="slider-row"><span>20%</span><span>24%</span></div>
+          <input type="range" class="slider" min="0" max="100" value="55">
+          <div class="toggle-row"><span class="tgl-label">Correção automática</span>
+            <div class="tgl on" onclick="this.classList.toggle('on')"></div>
+          </div>
+        </div>
+        <div class="ctrl-card">
+          <div class="ctrl-label">Iluminação Agro-C</div>
+          <div class="ctrl-val" style="color:var(--purple)">18 <span class="ctrl-unit">h/dia</span></div>
+          <div class="ctrl-desc">Ciclo de luz para cultivo hidropônico. Simula fotoperíodo terrestre.</div>
+          <div class="slider-row"><span>12h</span><span>24h</span></div>
+          <input type="range" class="slider" min="0" max="100" value="75">
+          <div class="toggle-row"><span class="tgl-label">Iluminação ativa</span>
+            <div class="tgl on" onclick="this.classList.toggle('on')"></div>
+          </div>
+        </div>
+        <div class="ctrl-card">
+          <div class="ctrl-label">Temperatura Cabine</div>
+          <div class="ctrl-val">21.4 <span class="ctrl-unit">°C</span></div>
+          <div class="ctrl-desc">Temperatura monitorada em todos os módulos habitados.</div>
+          <div class="slider-row"><span>18°C</span><span>26°C</span></div>
+          <input type="range" class="slider" min="0" max="100" value="42">
+          <div class="toggle-row"><span class="tgl-label">Controle automático</span>
+            <div class="tgl on" onclick="this.classList.toggle('on')"></div>
+          </div>
+        </div>
+        <div class="ctrl-card" style="border-color:rgba(239,68,68,.25)">
+          <div class="ctrl-label" style="color:var(--red)">Protocolo de Emergência</div>
+          <div class="ctrl-val" style="color:var(--red);font-size:18px;margin-bottom:10px">Inativo</div>
+          <div class="ctrl-desc">Ativa conservação máxima: desliga sistemas não-essenciais e raciona recursos
+            automaticamente.</div>
+          <button class="emg-btn"
+            onclick="let ok=confirm('Ativar protocolo de emergência completo?');if(ok){this.textContent='🔴 EMERGÊNCIA ATIVA';this.style.background='rgba(239,68,68,.15)';this.style.borderColor='var(--red)';this.style.color='var(--red)'}">Ativar
+            Emergência</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ④ AGRO + LOG -->
+    <div class="grid-2">
+      <div class="panel">
+        <div class="ph">
+          <div class="ph-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 0 1 10 10" />
+              <path d="M12 6v6l4 2" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            Produção Agrícola — Agro-C
+          </div>
+        </div>
+        <div class="pb">
+          <div class="agro-grid">
+            <div class="agro-item">
+              <div class="agro-label">Cultivos ativos</div>
+              <div class="agro-crops">
+                <div class="crop-row"><span>Alface hidropônica</span><span style="color:var(--green)">Crescendo</span>
+                </div>
+                <div class="crop-row"><span>Batata-doce</span><span style="color:var(--amber)">Colheita 12d</span></div>
+                <div class="crop-row"><span>Soja modificada</span><span style="color:var(--green)">Crescendo</span>
+                </div>
+                <div class="crop-row"><span>Rabanete</span><span style="color:var(--cyan)">Colheita 3d</span></div>
+                <div class="crop-row"><span>Trigo anão</span><span style="color:var(--t2)">Plantio</span></div>
+              </div>
+            </div>
+            <div class="agro-item">
+              <div class="agro-label">Estoque (dias restantes)</div>
+              <div class="big-num">38</div>
+              <div class="big-sub">para 6 tripulantes</div>
+              <div style="height:4px;background:var(--b);border-radius:2px;overflow:hidden;margin-top:10px">
+                <div style="height:100%;width:51%;background:var(--purple);border-radius:2px"></div>
+              </div>
+              <div style="font-size:10px;color:var(--t3);margin-top:4px">Meta: 75 dias de autonomia</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:12px">
+            <div class="ms">
+              <div class="ms-val" style="color:var(--green)">1.240L</div>
+              <div class="ms-lbl">água/irrigação</div>
+            </div>
+            <div class="ms">
+              <div class="ms-val" style="color:var(--amber)">28kWh</div>
+              <div class="ms-lbl">energia/dia</div>
+            </div>
+            <div class="ms">
+              <div class="ms-val" style="color:var(--cyan)">+2.1%</div>
+              <div class="ms-lbl">O₂ produzido</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="ph">
+          <div class="ph-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            Registro de Missão
+          </div>
+          <span style="font-size:10px;color:var(--t3)">Dia 142</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item">
+            <div class="lt">06:12</div>
+            <div class="lline"></div>
+            <div class="ltext"><strong>Eng-D</strong>: Energia atingiu limiar crítico (14 kWh). Redistribuição
+              automática sugerida.</div>
+          </div>
+          <div class="log-item">
+            <div class="lt">05:47</div>
+            <div class="lline"></div>
+            <div class="ltext"><strong>Agro-C</strong>: Ciclo de irrigação concluído. Consumo: 320 L de água.</div>
+          </div>
+          <div class="log-item">
+            <div class="lt">04:30</div>
+            <div class="lline"></div>
+            <div class="ltext"><strong>Sistema</strong>: Troca de turno. <strong>João Ribeiro</strong> assumiu plantão
+              noturno.</div>
+          </div>
+          <div class="log-item">
+            <div class="lt">02:15</div>
+            <div class="lline"></div>
+            <div class="ltext"><strong>P-07</strong>: Leitura 18% abaixo do esperado. Inspeção EVA recomendada.</div>
+          </div>
+          <div class="log-item">
+            <div class="lt">00:03</div>
+            <div class="lline"></div>
+            <div class="ltext"><strong>Med-E</strong>: <strong>Amara Nkosi</strong> em repouso monitorado. Fadiga
+              pós-EVA.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+
+</html>
